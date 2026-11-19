@@ -130,6 +130,15 @@ describe("KeybindingsSettings.logic", () => {
         expected: "alt+1",
         defaultInput: "alt+1",
       },
+      // regression: #38513 macOS Option turns letters into symbols
+      {
+        key: "π",
+        code: "KeyP",
+        altKey: true,
+        shiftKey: false,
+        expected: "alt+p",
+        defaultInput: "alt+p",
+      },
     ]) {
       const pressed = {
         key,
